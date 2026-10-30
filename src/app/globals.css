@@ -1,0 +1,87 @@
+
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #090909;
+  --foreground: #f5f0e5;
+  --gold: #d4af37;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #090909;
+  color: #f5f0e5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 15% 10%,
+      rgba(212, 175, 55, 0.12),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 85% 45%,
+      rgba(180, 130, 35, 0.08),
+      transparent 40%
+    );
+}
+
+.glass {
+  background: rgba(24, 22, 17, 0.72);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.glass-hover {
+  transition: all 0.25s ease;
+}
+
+.glass-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.55);
+}
+
+.gradient-text {
+  background: linear-gradient(
+    100deg,
+    #f8e7a1,
+    #d4af37,
+    #a87922
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-button {
+  background: linear-gradient(110deg, #b8860b, #e0bd55);
+  color: #090909;
+  transition: filter 0.2s ease;
+}
+
+.gradient-button:hover {
+  filter: brightness(1.12);
+}
+
+::selection {
+  background: #d4af37;
+  color: #090909;
+}
